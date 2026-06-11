@@ -61,18 +61,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Active link highlight
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    // Remove previous 'active' classes to avoid duplication if re-rendered
+    const currentHash = window.location.hash;
     document.querySelectorAll(".navbar .nav-link.active").forEach((lien) => {
       lien.classList.remove("active");
       lien.removeAttribute("aria-current");
     });
     document.querySelectorAll(".navbar .nav-link").forEach((lien) => {
       const href = lien.getAttribute("href");
-      if (href && href.split("#")[0] === currentPage) {
+      if (!href) {
+        return;
+      }
+      const [hrefPage, hrefHash] = href.split("#");
+      const effectiveHrefPage = hrefPage || "index.html";
+      if (effectiveHrefPage === currentPage && (!hrefHash || `#${hrefHash}` === currentHash)) {
         lien.classList.add("active");
         lien.setAttribute("aria-current", "page");
       }
     });
+if (currentPage === "index.html" && !currentHash) {
+  const brandLink = document.querySelector(".navbar-brand");
+  if (brandLink) {
+    brandLink.classList.add("active");  // ← ici
+    brandLink.setAttribute("aria-current", "page");
+  }
+}
 
     // Notifie search.js que la navbar est prête
     window.dispatchEvent(new Event("navbarLoaded"));

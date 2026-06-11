@@ -1,32 +1,32 @@
 /* ================================================
-   STUDIO — Feuille de styles principale
-   Thème : Apple Pro Dark / Glassmorphism
-   Dernière révision : 2026
-   ================================================ */
+STUDIO — Feuille de styles principale
+Thème : Apple Pro Dark / Glassmorphism
+Dernière révision : 2026
+================================================ */
 
 /* ------------------------------------------------
-   VARIABLES CSS — Design Tokens
-   ------------------------------------------------ */
+VARIABLES CSS — Design Tokens
+------------------------------------------------ */
 :root {
     /* Arrière-plans */
-    --bg-base: #000000;
-    --bg-surface: #161617;
-    --bg-elevated: #1c1c1e;
+    --bg-base: #101827;
+    --bg-surface: #1e293b;
+    --bg-elevated: #273449;
 
     /* Accentuation */
-    --accent: #0066cc;
-    --accent-hover: #0077ed;
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
 
     /* Verre (glassmorphism) */
-    --glass-bg: rgba(22, 22, 23, 0.85);
-    --glass-bg-hover: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --glass-border-strong: rgba(255, 255, 255, 0.25);
+    --glass-bg: rgba(30, 41, 59, 0.82);
+    --glass-bg-hover: rgba(255, 255, 255, 0.14);
+    --glass-border: rgba(226, 232, 240, 0.14);
+    --glass-border-strong: rgba(226, 232, 240, 0.24);
 
     /* Typographie */
-    --text-primary: #ffffff;
-    --text-secondary: #e5e5ea;
-    --text-muted: #b5b5ba;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
 
     /* Rayon de bordure */
     --radius-sm: 8px;
@@ -40,8 +40,8 @@
 
 
 /* ------------------------------------------------
-   RESET & BASES GLOBALES
-   ------------------------------------------------ */
+RESET & BASES GLOBALES
+------------------------------------------------ */
 *,
 *::before,
 *::after {
@@ -69,9 +69,29 @@ h4,
 h5,
 h6,
 .navbar-brand,
+.navbar-brand.active,
 .section-label,
 .hero-pill {
     font-family: -apple-system, BlinkMacSystemFont, 'Outfit', sans-serif;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -3rem;
+    left: 1rem;
+    z-index: 9999;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 1rem;
 }
 
 /* Texte secondaire utilitaire */
@@ -81,10 +101,13 @@ h6,
     font-weight: 400;
 }
 
+.text-muted {
+    color: var(--text-muted);
+}
 
 /* ------------------------------------------------
-   ACCESSIBILITÉ — Focus clavier
-   ------------------------------------------------ */
+ACCESSIBILITÉ — Focus clavier
+------------------------------------------------ */
 :focus-visible {
     outline: 2px solid var(--accent) !important;
     outline-offset: 3px;
@@ -140,8 +163,8 @@ button,
 
 
 /* ------------------------------------------------
-   CARTES & SURFACES (base commune)
-   ------------------------------------------------ */
+CARTES & SURFACES (base commune)
+------------------------------------------------ */
 .glass-base,
 .feature-card,
 .service-card,
@@ -169,8 +192,8 @@ button,
 
 
 /* ------------------------------------------------
-   BARRE DE NAVIGATION — Style Apple
-   ------------------------------------------------ */
+BARRE DE NAVIGATION — Style Apple
+------------------------------------------------ */
 .custom-apple-navbar {
     background-color: rgba(10, 5, 22, 0.72) !important;
     backdrop-filter: blur(20px) saturate(180%);
@@ -243,8 +266,8 @@ button,
 
 
 /* ------------------------------------------------
-   BOUTONS
-   ------------------------------------------------ */
+BOUTONS
+------------------------------------------------ */
 .btn-glass,
 .btn-glass-outline,
 .btn-glass-sm {
@@ -338,10 +361,52 @@ button,
 
 
 /* ------------------------------------------------
-   HERO SECTION
-   ------------------------------------------------ */
+HERO SECTION
+------------------------------------------------ */
 .hero-section {
     padding: 5rem 0 3rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    color: #fff;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Defer heavy hero image on small viewports to improve LCP.
+       Background image is only applied on larger screens where it
+       contributes more to perceived load. */
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    /* lighter blur and no upscaling to reduce paint cost */
+    filter: blur(2px);
+    transform: none;
+    z-index: -2;
+}
+
+@media (min-width: 768px) {
+    .hero-section::before {
+        background-image: url('marek-piwnicki-NwZmYW5ETnE-unsplash.webp');
+        transform: scale(1.02);
+        filter: blur(3px);
+        will-change: transform, opacity;
+    }
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 18, 36, 0.55);
+    z-index: -1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-section h1 {
@@ -389,8 +454,8 @@ button,
 
 
 /* ------------------------------------------------
-   CARDS DE CONTENU
-   ------------------------------------------------ */
+CARDS DE CONTENU
+------------------------------------------------ */
 
 /* Feature cards (avantages) */
 .feature-card {
@@ -436,8 +501,8 @@ button,
 
 
 /* ------------------------------------------------
-   SECTION STATISTIQUES
-   ------------------------------------------------ */
+SECTION STATISTIQUES
+------------------------------------------------ */
 .stats-section {
     padding: 3rem 1.5rem;
 }
@@ -458,8 +523,8 @@ button,
 
 
 /* ------------------------------------------------
-   TÉMOIGNAGES
-   ------------------------------------------------ */
+TÉMOIGNAGES
+------------------------------------------------ */
 .testimonial-card {
     padding: 2.5rem 2rem;
     margin: 0 auto;
@@ -500,8 +565,8 @@ button,
 
 
 /* ------------------------------------------------
-   FORMULAIRES GLOBAUX
-   ------------------------------------------------ */
+FORMULAIRES GLOBAUX
+------------------------------------------------ */
 .form-control {
     background: rgba(255, 255, 255, 0.10);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -530,8 +595,8 @@ button,
 
 
 /* ------------------------------------------------
-   MENUS DÉROULANTS
-   ------------------------------------------------ */
+MENUS DÉROULANTS
+------------------------------------------------ */
 .dropdown-menu {
     background: var(--bg-elevated);
     border: 1px solid var(--glass-border-strong);
@@ -554,8 +619,8 @@ button,
 
 
 /* ------------------------------------------------
-   FENÊTRES MODALES
-   ------------------------------------------------ */
+FENÊTRES MODALES
+------------------------------------------------ */
 .modal-content {
     background: var(--bg-elevated);
     border: 1px solid var(--glass-border-strong);
@@ -583,8 +648,8 @@ button,
 
 
 /* ------------------------------------------------
-   FOOTER
-   ------------------------------------------------ */
+FOOTER
+------------------------------------------------ */
 footer {
     background: var(--bg-surface);
     border-top: 1px solid var(--glass-border);
@@ -644,8 +709,8 @@ footer h5 {
 
 
 /* ------------------------------------------------
-   LIENS AVEC SOULIGNEMENT ANIMÉ
-   ------------------------------------------------ */
+LIENS AVEC SOULIGNEMENT ANIMÉ
+------------------------------------------------ */
 .link-fancy {
     position: relative;
     color: var(--text-primary);
@@ -673,8 +738,8 @@ footer h5 {
 
 
 /* ------------------------------------------------
-   CADRE PHOTO
-   ------------------------------------------------ */
+CADRE PHOTO
+------------------------------------------------ */
 .photo-frame {
     position: relative;
     border: 2px solid var(--glass-border);
@@ -699,8 +764,8 @@ footer h5 {
 
 
 /* ------------------------------------------------
-   RESPONSIVE — Ajustements mobiles
-   ------------------------------------------------ */
+RESPONSIVE — Ajustements mobiles
+------------------------------------------------ */
 @media (max-width: 767px) {
     body {
         padding-top: 60px;
@@ -897,8 +962,8 @@ footer h5 {
 }
 
 /* ------------------------------------------------
-   NAVBAR BRAND — Logo morph (cubes → home au hover)
-   ------------------------------------------------ */
+NAVBAR BRAND — Logo morph (cubes → home au hover)
+------------------------------------------------ */
 .brand-icon-wrap {
     position: relative;
     width: 20px;
@@ -941,46 +1006,14 @@ footer h5 {
 }
 
 /* ══════════════════════════════════════
-           BENTO GRID — PROJETS
-           Grille 12 colonnes, 2 rangées fixes
+        BENTO GRID — PROJETS
+        Grille 12 colonnes, 2 rangées fixes
         ══════════════════════════════════════ */
 .bento-projects {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto auto;
     gap: 1rem;
-}
-
-.hero-section {
-    position: relative;
-    overflow: hidden;
-    min-height: 70vh;
-    color: #fff;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1451188214936-ec16af5ca155?q=80&w=2728&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    filter: blur(5px);
-    transform: scale(1.05);
-    z-index: -2;
-}
-
-.hero-section::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(12, 18, 36, 0.55);
-    z-index: -1;
-}
-
-.hero-section .container {
-    position: relative;
-    z-index: 1;
 }
 
 /* Rangée 1 : grande carte gauche (5 col) + petite carte droite (7 col) */
@@ -1069,58 +1102,7 @@ footer h5 {
     flex: 1;
 }
 
-/* ══════════════════════════════════════
-           BENTO GRID — CONTACT
-        ══════════════════════════════════════ */
-.bento-contact {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1rem;
-}
-
-.bento-coords {
-    grid-column: 1 / 5;
-    grid-row: 1 / 3;
-}
-
-.bento-map {
-    grid-column: 5 / 13;
-    grid-row: 1;
-}
-
-.bento-form {
-    grid-column: 5 / 13;
-    grid-row: 2;
-}
-
-@media (max-width: 991px) {
-
-    .bento-coords,
-    .bento-map,
-    .bento-form {
-        grid-column: 1 / -1;
-        grid-row: auto;
-    }
-}
-
-.bento-card {
-    border-radius: 1.25rem;
-    overflow: hidden;
-}
-
-.bento-map iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 260px;
-    border: 0;
-    display: block;
-}
-
-.bento-form-inner {
-    padding: 2rem 2.25rem;
-}
-
-/* FIX #5 : zoom image accessible clavier — transition CSS uniquement, pas inline */
+/* ── Bento Grid ── */
 .portrait-img {
     width: 100%;
     height: 100%;
@@ -1140,10 +1122,6 @@ footer h5 {
     outline: 3px solid rgba(255, 255, 255, 0.7);
     outline-offset: 3px;
     border-radius: 1rem;
-}
-
-.text-secondary-muted {
-    color: #343a40;
 }
 
 /* ── Bento Grid ── */
@@ -1194,13 +1172,6 @@ footer h5 {
 
 .bento-form-inner {
     padding: 2rem 2.25rem;
-}
-
-.form-control:focus {
-    /* Focus visible amélioré — contraste suffisant (WCAG 1.4.11) */
-    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
-    outline: 2px solid rgba(255, 255, 255, 0.5);
-    outline-offset: 1px;
 }
 
 /* Live region erreur de recherche */

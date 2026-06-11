@@ -40,9 +40,20 @@
             }
 
             if (!matchFound) {
-                // Générer dynamiquement des exemples de mots-clés à suggérer
+                // Affiche l'erreur dans une live region accessible au lieu d'un alert()
+                let errorEl = document.getElementById('search-error-msg');
+                if (!errorEl) {
+                    errorEl = document.createElement('div');
+                    errorEl.id = 'search-error-msg';
+                    errorEl.setAttribute('role', 'status');
+                    errorEl.setAttribute('aria-live', 'polite');
+                    const form = document.getElementById('search-form');
+                    if (form) form.appendChild(errorEl);
+                }
                 const exampleKeywords = siteContent.flatMap(item => item.keywords).slice(0, 3).join('", "');
-                alert(`Aucun résultat trouvé pour : "${searchInput.value}". \nEssayez des mots comme : "${exampleKeywords}".`);
+                errorEl.textContent = `Aucun résultat pour "${searchInput.value}". Essayez : "${exampleKeywords}".`;
+                // Efface après 4 secondes
+                setTimeout(() => { errorEl.textContent = ''; }, 4000);
             }
         }); // end submit listener
 
