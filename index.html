@@ -270,8 +270,8 @@
                             <span class="tech-tag">Personas</span>
                             <span class="tech-tag">UX Research</span>
                         </div>
-                        <a href="https://www.figma.com/proto/pbqNx6QhdLfroFJg1Jdq8q/Quentin-Hawotte---Examen?node-id=32-2887&t=4GoM4egpZj0eLpD8-1" target="_blank" rel="noopener"
-                            class="btn btn-glass-sm mt-auto">
+                        <a href="https://www.figma.com/proto/pbqNx6QhdLfroFJg1Jdq8q/Quentin-Hawotte---Examen?node-id=32-2887&t=4GoM4egpZj0eLpD8-1"
+                            target="_blank" rel="noopener" class="btn btn-glass-sm mt-auto">
                             <span class="icon me-2" aria-hidden="true"><svg viewBox="0 0 24 24">
                                     <path d="M7 17L17 7" />
                                     <polyline points="7 7 17 7 17 17" />
@@ -314,7 +314,8 @@
                             <span class="tech-tag">Accessibilité</span>
                             <span class="tech-tag">Pédagogie</span>
                         </div>
-                        <a href="Cours_HTML_CSS_Bootstrap_JS_v3 copy.pdf" class="btn btn-glass-sm mt-auto" target="_blank" rel="noopener">
+                        <a href="Cours_HTML_CSS_Bootstrap_JS_v3 copy.pdf" class="btn btn-glass-sm mt-auto"
+                            target="_blank" rel="noopener">
                             <span class="icon me-2" aria-hidden="true"><svg viewBox="0 0 24 24">
                                     <path d="M7 17L17 7" />
                                     <polyline points="7 7 17 7 17 17" />
@@ -433,22 +434,23 @@
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <article class="service-card glass-base">
-                        <img src="https://placehold.co/600x360/120924/ff007f?text=Service+Premium" class="card-img-top"
+                        <img src="https://placehold.co/600x360/000000/0166ff?text=Service+Premium" class="card-img-top"
                             alt="Illustration du Service Premium" width="600" height="360" loading="eager"
                             decoding="async">
                         <div class="card-body">
                             <h3 class="card-title h5">Service Premium</h3>
                             <p class="card-text mb-0">Un service complet et personnalisé pour répondre à vos besoins
                                 spécifiques.</p>
-                            <a href="contact.html" class="btn btn-glass-sm mt-4"
-                                aria-label="En savoir plus sur le Service Premium">En
-                                savoir plus</a>
+                            <button class="btn btn-glass-sm mt-4" data-bs-toggle="modal"
+                                data-bs-target="#modalPremium" aria-label="En savoir plus sur le Service Premium">
+                                En savoir plus
+                            </button>
                         </div>
                     </article>
                 </div>
                 <div class="col">
                     <article class="service-card glass-base">
-                        <img src="https://placehold.co/600x360/080511/00f5d4?text=Consultation" class="card-img-top"
+                        <img src="https://placehold.co/600x360/000000/66ff66?text=Consultation" class="card-img-top"
                             alt="Illustration de la Consultation" width="600" height="360" loading="lazy"
                             decoding="async">
                         <div class="card-body">
@@ -464,15 +466,16 @@
                 </div>
                 <div class="col">
                     <article class="service-card glass-base">
-                        <img src="https://placehold.co/600x360/7000ff/ffffff?text=Formation" class="card-img-top"
+                        <img src="https://placehold.co/600x360/000000/e580ff?text=Formation+Pro" class="card-img-top"
                             alt="Illustration de la Formation" width="600" height="360" loading="lazy" decoding="async">
                         <div class="card-body">
                             <h3 class="card-title h5">Formation</h3>
                             <p class="card-text mb-0">Des formations adaptées à vos compétences pour développer votre
                                 expertise.</p>
-                            <a href="contact.html" class="btn btn-glass-sm mt-4"
-                                aria-label="En savoir plus sur la Formation">En savoir
-                                plus</a>
+                            <button class="btn btn-glass-sm mt-4" data-bs-toggle="modal"
+                                data-bs-target="#modalFormation" aria-label="En savoir plus sur la Formation">
+                                En savoir plus
+                            </button>
                         </div>
                     </article>
                 </div>
@@ -564,7 +567,7 @@
                     <figure class="testimonial-card glass-base w-100 d-flex flex-column">
                         <blockquote class="blockquote flex-grow-1">
                             <p class="card-text">Un service exceptionnel et des résultats concrets. Je recommande
-                                vivement&nbsp;!</p>
+                                vivement!</p>
                         </blockquote>
                         <div class="stars mb-3">
                             <span aria-label="Évaluation : 5 étoiles sur 5">★★★★★</span>
@@ -612,7 +615,7 @@
                             <span aria-label="Évaluation : 5 étoiles sur 5">★★★★★</span>
                         </div>
                         <figcaption class="d-flex align-items-center gap-3">
-                            <img src="https://placehold.co/44x44/7000ff/ffffff?text=SL" alt=""
+                            <img src="https://placehold.co/44x44/120924/ff9f0a?text=SL" alt=""
                                 class="avatar flex-shrink-0" width="44" height="44" aria-hidden="true">
                             <div class="client-info">
                                 <p class="client-name mb-0">Sophie Lambert</p>
@@ -769,9 +772,73 @@
                     <p>Une session de consultation d'une heure pour analyser vos besoins, définir vos objectifs et
                         établir une feuille de route claire pour votre projet web ou marketing.</p>
                     <ul class="list-unstyled mt-3">
-                        <li class="mb-2">✦ Audit de votre présence en ligne</li>
-                        <li class="mb-2">✦ Recommandations personnalisées</li>
-                        <li class="mb-2">✦ Plan d'action concret</li>
+                        <li class="mb-2">. Audit de votre présence en ligne</li>
+                        <li class="mb-2">. Recommandations personnalisées</li>
+                        <li class="mb-2">. Plan d'action concret</li>
+                    </ul>
+                </div>
+
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-glass-sm" data-bs-dismiss="modal">Fermer</button>
+                    <a href="contact.html" class="btn btn-glass-sm">Prendre rendez-vous</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Modal Service Premium ── -->
+    <div class="modal fade" id="modalPremium" tabindex="-1" aria-labelledby="modalPremiumLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-base border-0">
+
+                <div class="modal-header border-0">
+                    <h2 class="modal-title h5" id="modalPremiumLabel">Service Premium</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fermer"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>Un service complet et sur mesure pour les projets ambitieux — de la conception UX à l'intégration
+                        finale, avec un suivi personnalisé à chaque étape.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2">. Analyse de vos besoins & brief détaillé</li>
+                        <li class="mb-2">. Maquette Figma + wireframes validés</li>
+                        <li class="mb-2">. Intégration HTML/CSS/JS responsive</li>
+                        <li class="mb-2">. Optimisation performance & accessibilité WCAG</li>
+                        <li class="mb-2">. Livraison & support post-lancement</li>
+                    </ul>
+                </div>
+
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-glass-sm" data-bs-dismiss="modal">Fermer</button>
+                    <a href="contact.html" class="btn btn-glass-sm">Démarrer un projet</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Modal Formation ── -->
+    <div class="modal fade" id="modalFormation" tabindex="-1" aria-labelledby="modalFormationLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-base border-0">
+
+                <div class="modal-header border-0">
+                    <h2 class="modal-title h5" id="modalFormationLabel">Formation</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fermer"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>Des sessions de formation adaptées à votre niveau pour monter en compétences sur le
+                        développement front-end, le design UX/UI ou la stratégie web.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2">. HTML / CSS / JavaScript vanilla</li>
+                        <li class="mb-2">. Bootstrap 5 & bonnes pratiques responsive</li>
+                        <li class="mb-2">. Introduction au design UX & Figma</li>
+                        <li class="mb-2">. Accessibilité web & WCAG</li>
+                        <li class="mb-2">. Rythme flexible, en présentiel ou à distance</li>
                     </ul>
                 </div>
 

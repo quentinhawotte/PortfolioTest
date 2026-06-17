@@ -14,7 +14,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap : chargement non-bloquant pour améliorer le LCP -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style"
+        onload="this.rel='stylesheet'" fetchpriority="high">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    </noscript>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <!-- Google Fonts : chargement asynchrone pour éviter le render-blocking -->
@@ -53,10 +58,12 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero-section text-center" role="region" aria-labelledby="about-hero-heading">
-        <div class="container">
+    <section class="hero-section text-center mb-5" role="region" aria-labelledby="about-hero-heading">
+        <div class="container" style="max-width: 600px;">
             <p class="section-label">Qui suis-je</p>
             <h1 id="about-hero-heading">À propos</h1>
+            <p class="lead text-white-50 text-center">Découvrez mon parcours, mes compétences et ma passion pour le
+                développement web et le design.</p>
         </div>
     </section>
 
@@ -70,7 +77,7 @@
 
                     <div class="d-flex align-items-start gap-4 mb-4 flex-column flex-md-row">
 
-                        <figure class="m-0" style="width:150px; height:150px; flex-shrink:0">
+                        <figure class="m-4" style="width:150px; height:150px; flex-shrink:0">
                             <a href="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                 target="_blank" rel="noopener noreferrer" class="portrait-link d-block"
                                 aria-label="Voir le portrait en taille réelle (ouvre un nouvel onglet)">
@@ -101,33 +108,33 @@
                     <!-- Cards parcours + compétences -->
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <article class="p-4 bg-white text-secondary rounded-4 shadow-sm h-100"
+                            <article class="glass-base p-4 h-100"
                                 aria-labelledby="parcours-heading">
-                                <h3 id="parcours-heading" class="h5">Mon parcours</h3>
-                                <p class="mb-2 text-secondary">
+                                <h3 id="parcours-heading" class="h5 text-white">Mon parcours</h3>
+                                <p class="m-2" style="color:var(--text-secondary)">
                                     Après une formation en marketing (IFAPME Liège), je me suis réorienté vers le
                                     développement web et le design UX/UI. J'ai conçu des wireframes pour des agences
                                     belges comme GREAT et TBWA Belgium, et développé des projets complets en Bootstrap
                                     5,
                                     HTML/CSS et JavaScript vanilla.
                                 </p>
-                                <p class="mb-0 text-secondary">
+                                <p class="mb-0" style="color:var(--text-secondary)">
                                     J'apprécie autant la phase de conception — personas, wireframes, prototypes Figma —
                                     que l'intégration et l'optimisation technique qui en découle.
                                 </p>
                             </article>
                         </div>
                         <div class="col-md-6">
-                            <article class="p-4 bg-white text-secondary rounded-4 shadow-sm h-100"
+                            <article class="glass-base p-4 h-100"
                                 aria-labelledby="competences-heading">
-                                <h3 id="competences-heading" class="h5">Compétences clés</h3>
-                                <ul class="mb-0 ps-3 text-secondary">
+                                <h3 id="competences-heading" class="h5 text-white">Compétences clés</h3>
+                                <ul class="m-2 ps-3" style="color:var(--text-secondary)">
                                     <li>HTML5 / CSS3 / JavaScript (vanilla)</li>
-                                    <li>Bootstrap 5 &amp; systèmes de design</li>
+                                    <li>Bootstrap 5 systèmes de design</li>
                                     <li>UX/UI : personas, wireframes, Figma</li>
                                     <li>Accessibilité WCAG A/AA</li>
                                     <li>Performance web (LCP, CLS, WebP)</li>
-                                    <li>Git &amp; workflow front-end moderne</li>
+                                    <li>Git workflow front-end moderne</li>
                                     <li>Marketing stratégique</li>
                                 </ul>
                             </article>
@@ -137,73 +144,107 @@
                     <!-- ── Chiffres clés & Preuves d'impact (Best Practice : Evidence) ── -->
                     <div class="row g-3 mt-3">
                         <div class="col-6 col-md-3">
-                            <div class="p-3 bg-white text-center rounded-4 shadow-sm h-100">
-                                <span class="d-block h3 fw-bold text-primary mb-1">100%</span>
-                                <small class="text-muted text-secondary">Conformité WCAG</small>
+                            <div class="glass-base p-3 text-center h-100">
+                                <span class="d-block h3 fw-bold mb-1" style="color:var(--accent)">100%</span>
+                                <small style="color:var(--text-muted)">Conformité WCAG</small>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
-                            <div class="p-3 bg-white text-center rounded-4 shadow-sm h-100">
-                                <span class="d-block h3 fw-bold text-primary mb-1">&gt;95</span>
-                                <small class="text-muted text-secondary">Score Lighthouse</small>
+                            <div class="glass-base p-3 text-center h-100">
+                                <span class="d-block h3 fw-bold mb-1" style="color:var(--accent)">95</span>
+                                <small style="color:var(--text-muted)">Score Lighthouse</small>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
-                            <div class="p-3 bg-white text-center rounded-4 shadow-sm h-100">
-                                <span class="d-block h3 fw-bold text-primary mb-1">2+ ans</span>
-                                <small class="text-muted text-secondary">Expérience Agence</small>
+                            <div class="glass-base p-3 text-center h-100">
+                                <span class="d-block h3 fw-bold mb-1" style="color:var(--accent)">2+ ans</span>
+                                <small style="color:var(--text-muted)">Expérience Agence</small>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
-                            <div class="p-3 bg-white text-center rounded-4 shadow-sm h-100">
-                                <span class="d-block h3 fw-bold text-primary mb-1">10+</span>
-                                <small class="text-muted text-secondary">Projets Livrés</small>
+                            <div class="glass-base p-3 text-center h-100">
+                                <span class="d-block h3 fw-bold mb-1" style="color:var(--accent)">10+</span>
+                                <small style="color:var(--text-muted)">Projets Livrés</small>
                             </div>
                         </div>
                     </div>
 
                     <!-- Valeurs / philosophie + Vision -->
-                    <div class="mt-4 p-4 bg-white rounded-4 shadow-sm">
-                        <h3 class="h5" id="philosophie-heading">Ma philosophie &amp; Vision</h3>
-                        <p class="mb-3 text-secondary">
+                    <div class="my-4 p-4 glass-base">
+                        <h3 class="h5 text-white" id="philosophie-heading">Ma philosophie & Vision</h3>
+                        <p class="mb-3" style="color:var(--text-secondary)">
                             Un bon site, c'est d'abord un site que tout le monde peut utiliser. Je conçois en pensant
                             aux lecteurs d'écran autant qu'aux dernières tendances visuelles. La glassmorphism et les
                             bento grids sont des outils esthétiques, pas des fins en soi — ils servent l'expérience,
                             pas l'inverse.
                         </p>
-                        
+
                         <!-- Citation directe (Best Practice : Dialog) -->
                         <blockquote class="blockquote border-start border-4 border-primary ps-3 my-3">
-                            <p class="mb-0 text-dark fst-italic h6">« Le design n'est pas seulement ce à quoi ça ressemble, c'est comment ça fonctionne. Mon but est d'allier esthétique moderne et accessibilité totale. »</p>
+                            <p class="mb-0 fst-italic h6" style="color:var(--text-primary)">« Le design n'est pas seulement ce à quoi ça
+                                ressemble, c'est comment ça fonctionne. Mon but est d'allier esthétique moderne et
+                                accessibilité totale. »</p>
                         </blockquote>
 
                         <!-- Vision future (Best Practice : Sequel Preview) -->
-                        <p class="mb-0 small text-muted mt-3">
-                            <strong>Ma vision d'avenir :</strong> Face à un web saturé, je m'oriente activement vers l'éco-conception numérique pour garantir des solutions légères, durables et universellement accessibles.
+                        <p class="mb-0 small mt-3" style="color:var(--text-muted)">
+                            <strong>Ma vision d'avenir :</strong> Face à un web saturé, je m'oriente activement vers
+                            l'éco-conception numérique pour garantir des solutions légères, durables et universellement
+                            accessibles.
                         </p>
                     </div>
+                    <div class="my-4 p-4 glass-base">
+                        <h3 class="h5 text-white" id="passions-heading">Passions & Inspirations</h3>
+                        <p class="mb-3" style="color:var(--text-secondary)">
+                            En dehors du code et des wireframes, je suis passionné par la musique rock et le
+                            design sonore. J'aime explorer comment le son peut enrichir l'expérience utilisateur et
+                            créer des ambiances immersives.
+                        </p>
+                        <iframe data-testid="embed-iframe" style="border-radius:12px"
+                            src="https://open.spotify.com/embed/playlist/37i9dQZF1EQn2GRFTFMl2A?utm_source=generator&si=211f082aff984e02"
+                            width="100%" height="400" frameborder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy" title="Playlist Spotify rock et design sonore"></iframe>
 
-                    <!-- CTA optimisé (Best Practice : Call To Action pour la Lead-Gen) -->
-                    <div class="mt-4 d-flex flex-column flex-sm-row gap-3 align-items-center border-top pt-4">
-                        <a class="btn btn-primary px-4 py-2 rounded-3 shadow-sm fw-bold" href="contact.html">
-                            <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Discutons de votre projet
-                        </a>
-                        <a class="btn btn-outline-secondary px-4 py-2 rounded-3" href="CV_HAWOTTE_Quentin v1.5.pdf" target="_blank" rel="noopener"
-                            aria-label="Télécharger mon CV (ouvre un nouvel onglet, format PDF)">
-                            Télécharger CV
-                        </a>
-                        <div class="ms-sm-auto d-flex gap-3 mt-2 mt-sm-0">
-                            <a href="https://github.com/" target="_blank" rel="noopener"
-                                aria-label="Mon profil GitHub (ouvre un nouvel onglet)"
-                                class="text-decoration-none text-secondary">
-                                <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                        <figure class="ratio ratio-16x9 mt-4" style="border-radius: 12px; overflow: hidden;">
+                            <iframe src="https://player.vimeo.com/video/385433252"
+                                title="Présentation vidéo Brasserie projet Gsara 2019"
+                                allow="autoplay; fullscreen; picture-in-picture"
+                                loading="lazy" allowfullscreen></iframe>
+                        </figure>
+                        <figure class="ratio ratio-16x9 mt-4" style="border-radius: 12px; overflow: hidden;">
+                            <iframe src="https://www.youtube.com/embed/CBPlisWQLxo"
+                                title="Présentation vidéo de Quentin Hawotte Ingé son Technifuture 2020"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                loading="lazy" allowfullscreen></iframe>
+                        </figure>
+
+
+
+
+                        <!-- CTA optimisé (Best Practice : Call To Action pour la Lead-Gen) -->
+                        <div class="mt-4 d-flex flex-column flex-sm-row gap-3 align-items-center border-top pt-4" style="border-color:var(--glass-border) !important">
+                            <a class="btn btn-primary px-4 py-2 rounded-3 shadow-sm fw-bold" href="contact.html">
+                                <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Discutons de votre projet
                             </a>
-                            <a href="https://linkedin.com/" target="_blank" rel="noopener"
-                                aria-label="Mon profil LinkedIn (ouvre un nouvel onglet)" class="text-decoration-none text-secondary">
-                                <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+                            <a class="btn btn-outline-secondary px-4 py-2 rounded-3" href="CV_HAWOTTE_Quentin v1.5.pdf"
+                                target="_blank" rel="noopener"
+                                aria-label="Télécharger mon CV (ouvre un nouvel onglet, format PDF)">
+                                Télécharger CV
                             </a>
+                            <div class="ms-sm-auto d-flex gap-3 mt-2 mt-sm-0">
+                                <a href="https://github.com/" target="_blank" rel="noopener"
+                                    aria-label="Mon profil GitHub (ouvre un nouvel onglet)"
+                                    class="text-decoration-none text-secondary">
+                                    <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://linkedin.com/" target="_blank" rel="noopener"
+                                    aria-label="Mon profil LinkedIn (ouvre un nouvel onglet)"
+                                    class="text-decoration-none text-secondary">
+                                    <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </div>
-                    </div>
                 </section>
             </div>
         </div>
@@ -279,6 +320,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="navbar.js" defer></script>
+    <script src="search.js" defer></script>
 </body>
 
 </html>
