@@ -13,62 +13,40 @@
     <meta property="og:description" content="Studio — Développement web moderne, services premium et consultation.">
     <meta property="og:image" content="https://placehold.co/1200x630/120924/ff007f?text=Studio+OG+Image">
     <meta property="og:url" content="https://votre-site.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Studio — Développement web moderne, services premium et consultation">
-    <meta name="twitter:description" content="Studio — Développement web moderne, services premium et consultation.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/120924/ff007f?text=Studio+Twitter+Image">
+    <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload critical styles to improve LCP -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* Minimalist SVG icon helpers */
-        .icon {
-            display: inline-block;
-            vertical-align: -0.125em;
-        }
 
-        .icon svg {
-            width: 1em;
-            height: 1em;
-            stroke: currentColor;
-            fill: none;
-            stroke-width: 1.75;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
+    <!-- Preload critical styles to improve LCP -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style"
+        onload="this.rel='stylesheet'" fetchpriority="high">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    </noscript>
 
-        .icon-lg svg {
-            width: 2rem;
-            height: 2rem;
-            stroke-width: 1.5;
-        }
-
-        .icon-sm svg {
-            width: 0.9em;
-            height: 0.9em;
-        }
-    </style>
     <!-- Load Google Fonts non-blocking (preload then apply) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@300;400;500&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@300;400;500&display=swap"
+        as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@300;400;500&display=swap">
+    </noscript>
+
     <link rel="icon"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23120924'/%3E%3Ccircle cx='50' cy='50' r='20' fill='%23ffffff'/%3E%3C/svg%3E">
     <!-- Preload local main CSS then apply to reduce render-blocking -->
     <link rel="preload" href="main.css" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="main.css"></noscript>
-    <style>
-        .text-muted {
-            color: var(--text-muted, #9ca3af) !important;
-        }
-    </style>
+    <noscript>
+        <link rel="stylesheet" href="main.css">
+    </noscript>
 
 </head>
 
 <body>
-
     <a class="skip-link visually-hidden-focusable" href="#main-content">Aller au contenu</a>
 
     <header>
@@ -133,10 +111,9 @@
                             <polyline points="8 6 2 12 8 18" />
                         </svg></span> HTML / CSS / JS</span>
                 <span><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="3" />
-                            <path
-                                d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
-                        </svg></span> React</span>
+                            <path d="M12 20h9" />
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                        </svg></span> UX/UI</span>
                 <span><span class="icon icon-sm" aria-hidden="true"><svg viewBox="0 0 24 24">
                             <rect x="2" y="3" width="20" height="18" rx="2" />
                             <path d="M8 12h8M8 8h8M8 16h4" />
@@ -202,8 +179,8 @@
         </section>
 
         <!-- ══════════════════════════════════════
-             PROJETS — BENTO GRID
-        ══════════════════════════════════════ -->
+                PROJETS — BENTO GRID
+            ══════════════════════════════════════ -->
         <section id="projects" class="mb-5" aria-labelledby="projects-title">
             <div class="text-center mb-5">
                 <p class="section-label">Ce que j'ai réalisé</p>
@@ -218,22 +195,25 @@
                         <div
                             style="position:absolute;inset:0;background:radial-gradient(circle at 70% 50%,rgba(0,102,204,0.25),transparent 60%);">
                         </div>
-                        <span style="z-index:1;position:relative;opacity:0.9;"><svg width="52" height="52"
-                                viewBox="0 0 24 24" fill="none" stroke="#0066cc" stroke-width="1.25"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 19h16" />
-                                <path d="M7 15v4" />
-                                <path d="M12 11v8" />
-                                <path d="M17 7v12" />
-                                <path d="M7 11l3-3 5 5 4-4" />
-                            </svg></span>
-                        <div style="margin-left:1.5rem;z-index:1;position:relative;">
-                            <span
-                                style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#0066cc;">Étude
-                                de cas marketing</span>
-                            <h3
-                                style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.4rem;margin:0.3rem 0 0;color:var(--text-primary);">
-                                Red Bull — TFE IFAPME</h3>
+                        <div class="bento-proj-banner-content"
+                            style="display:flex;align-items:center;gap:1.5rem;position:relative;z-index:1;">
+                            <span class="bento-proj-icon" aria-hidden="true" style="opacity:0.9;"><svg width="52"
+                                    height="52" viewBox="0 0 24 24" fill="none" stroke="#0066cc" stroke-width="1.25"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 19h16" />
+                                    <path d="M7 15v4" />
+                                    <path d="M12 11v8" />
+                                    <path d="M17 7v12" />
+                                    <path d="M7 11l3-3 5 5 4-4" />
+                                </svg></span>
+                            <div>
+                                <span
+                                    style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#0066cc;">Étude
+                                    de cas marketing</span>
+                                <h3
+                                    style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.4rem;margin:0.3rem 0 0;color:var(--text-primary);">
+                                    Red Bull — TFE IFAPME</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="bento-proj-body">
@@ -247,7 +227,7 @@
                             <span class="tech-tag">Canvas API</span>
                             <span class="tech-tag">Marketing</span>
                         </div>
-                        <a href="contact.html" class="btn btn-glass-sm mt-auto">
+                        <a href="Red Bull v2.pdf" class="btn btn-glass-sm mt-auto" target="_blank" rel="noopener">
                             <span class="icon me-2" aria-hidden="true"><svg viewBox="0 0 24 24">
                                     <path d="M7 17L17 7" />
                                     <polyline points="7 7 17 7 17 17" />
@@ -261,19 +241,22 @@
                         <div
                             style="position:absolute;inset:0;background:radial-gradient(circle at 70% 50%,rgba(48,209,88,0.2),transparent 60%);">
                         </div>
-                        <span style="z-index:1;position:relative;opacity:0.9;"><svg width="52" height="52"
-                                viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="1.25"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="3" width="18" height="18" rx="2" />
-                                <path d="M3 9h18M9 21V9" />
-                            </svg></span>
-                        <div style="margin-left:1.5rem;z-index:1;position:relative;">
-                            <span
-                                style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#30d158;">UX
-                                Design</span>
-                            <h3
-                                style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.4rem;margin:0.3rem 0 0;color:var(--text-primary);">
-                                Wireframes GREAT & TBWA</h3>
+                        <div class="bento-proj-banner-content"
+                            style="display:flex;align-items:center;gap:1.5rem;position:relative;z-index:1;">
+                            <span class="bento-proj-icon" aria-hidden="true" style="opacity:0.9;"><svg width="52"
+                                    height="52" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="1.25"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                                    <path d="M3 9h18M9 21V9" />
+                                </svg></span>
+                            <div>
+                                <span
+                                    style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#30d158;">UX
+                                    Design</span>
+                                <h3
+                                    style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.4rem;margin:0.3rem 0 0;color:var(--text-primary);">
+                                    Wireframes GREAT & TBWA</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="bento-proj-body">
@@ -287,7 +270,8 @@
                             <span class="tech-tag">Personas</span>
                             <span class="tech-tag">UX Research</span>
                         </div>
-                        <a href="contact.html" class="btn btn-glass-sm mt-auto">
+                        <a href="https://www.figma.com/proto/pbqNx6QhdLfroFJg1Jdq8q/Quentin-Hawotte---Examen?node-id=32-2887&t=4GoM4egpZj0eLpD8-1" target="_blank" rel="noopener"
+                            class="btn btn-glass-sm mt-auto">
                             <span class="icon me-2" aria-hidden="true"><svg viewBox="0 0 24 24">
                                     <path d="M7 17L17 7" />
                                     <polyline points="7 7 17 7 17 17" />
@@ -302,18 +286,21 @@
                         <div
                             style="position:absolute;inset:0;background:radial-gradient(circle at 70% 50%,rgba(191,90,242,0.25),transparent 60%);">
                         </div>
-                        <span style="z-index:1;position:relative;opacity:0.9;"><svg width="52" height="52"
-                                viewBox="0 0 24 24" fill="none" stroke="#bf5af2" stroke-width="1.25"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-                            </svg></span>
-                        <div style="margin-left:1.5rem;z-index:1;position:relative;">
-                            <span
-                                style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#bf5af2;">Formation</span>
-                            <h3
-                                style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.4rem;margin:0.3rem 0 0;color:var(--text-primary);">
-                                Cours HTML/CSS/JS complet</h3>
+                        <div class="bento-proj-banner-content"
+                            style="display:flex;align-items:center;gap:1.5rem;position:relative;z-index:1;">
+                            <span class="bento-proj-icon" aria-hidden="true" style="opacity:0.9;"><svg width="52"
+                                    height="52" viewBox="0 0 24 24" fill="none" stroke="#bf5af2" stroke-width="1.25"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                                </svg></span>
+                            <div>
+                                <span
+                                    style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#bf5af2;">Formation</span>
+                                <h3
+                                    style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.4rem;margin:0.3rem 0 0;color:var(--text-primary);">
+                                    Cours HTML/CSS/JS complet</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="bento-proj-body">
@@ -327,7 +314,7 @@
                             <span class="tech-tag">Accessibilité</span>
                             <span class="tech-tag">Pédagogie</span>
                         </div>
-                        <a href="contact.html" class="btn btn-glass-sm mt-auto">
+                        <a href="Cours_HTML_CSS_Bootstrap_JS_v3 copy.pdf" class="btn btn-glass-sm mt-auto" target="_blank" rel="noopener">
                             <span class="icon me-2" aria-hidden="true"><svg viewBox="0 0 24 24">
                                     <path d="M7 17L17 7" />
                                     <polyline points="7 7 17 7 17 17" />
@@ -335,51 +322,6 @@
                         </a>
                     </div>
                 </article>
-
-                <!-- Carte 4 — Portfolio (petite droite rangée 2) -->
-                <article class="bento-proj-4 bento-proj-card glass-base">
-                    <div class="bento-proj-banner" style="background:linear-gradient(135deg,#080a14,#0d1433);">
-                        <div
-                            style="position:absolute;inset:0;background:radial-gradient(circle at 70% 50%,rgba(120,115,245,0.25),transparent 60%);">
-                        </div>
-                        <span style="z-index:1;position:relative;opacity:0.9;"><svg width="52" height="52"
-                                viewBox="0 0 24 24" fill="none" stroke="#7873f5" stroke-width="1.25"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8z" />
-                                <circle cx="6.5" cy="11.5" r="1.5" fill="#7873f5" stroke="none" />
-                                <circle cx="9.5" cy="7.5" r="1.5" fill="#7873f5" stroke="none" />
-                                <circle cx="14.5" cy="7.5" r="1.5" fill="#7873f5" stroke="none" />
-                                <circle cx="17.5" cy="11.5" r="1.5" fill="#7873f5" stroke="none" />
-                            </svg></span>
-                        <div style="margin-left:1.5rem;z-index:1;position:relative;">
-                            <span
-                                style="font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#7873f5;">Portfolio</span>
-                            <h3
-                                style="font-family:'Outfit',sans-serif;font-weight:700;font-size:1.4rem;margin:0.3rem 0 0;color:var(--text-primary);">
-                                Portfolio glassmorphism</h3>
-                        </div>
-                    </div>
-                    <div class="bento-proj-body">
-                        <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.6;margin-bottom:1.25rem;">
-                            Ce site — esthétique glassmorphism inspirée d'Apple, navbar injectable via JS, animations
-                            scroll-reveal, architecture CSS modulaire.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2 mb-4">
-                            <span class="tech-tag">HTML/CSS</span>
-                            <span class="tech-tag">Bootstrap 5</span>
-                            <span class="tech-tag">Glassmorphism</span>
-                            <span class="tech-tag">JS Vanilla</span>
-                        </div>
-                        <a href="a-propos.html" class="btn btn-glass-sm mt-auto">
-                            <span class="icon me-2" aria-hidden="true"><svg viewBox="0 0 24 24">
-                                    <path d="M7 17L17 7" />
-                                    <polyline points="7 7 17 7 17 17" />
-                                </svg></span>En savoir plus
-                        </a>
-                    </div>
-                </article>
-
             </div>
         </section>
 
@@ -400,10 +342,9 @@
                             <span class="skill-pill">CSS3</span>
                             <span class="skill-pill">JavaScript ES6+</span>
                             <span class="skill-pill">Bootstrap 5</span>
-                            <span class="skill-pill">React</span>
-                            <span class="skill-pill">Vue.js</span>
                             <span class="skill-pill">Glassmorphism</span>
                             <span class="skill-pill">Flexbox / Grid</span>
+                            <span class="skill-pill">WebP / Performance</span>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -438,10 +379,9 @@
 
         <!-- ── Timeline ── -->
         <section class="mb-5" aria-labelledby="tl-heading">
-            <h2 id="tl-heading" class="visually-hidden">Étapes clés</h2>
             <div class="text-center mb-5">
                 <p class="section-label">Mon parcours</p>
-                <span class="section-title" aria-hidden="true">Étapes clés</span>
+                <h2 id="tl-heading" class="section-title">Étapes clés</h2>
             </div>
             <div class="timeline-wrapper" role="list">
                 <div class="timeline-item reveal" role="listitem">
@@ -454,12 +394,12 @@
                     </div>
                 </div>
                 <div class="timeline-item reveal reveal-delay-1" role="listitem">
-                    <div class="timeline-dot" style="--dot-color:#30d158; justify-content: center;"></div>
+                    <div class="timeline-dot" style="--dot-color:#4b30d1; justify-content: center;"></div>
                     <div class="timeline-content glass-base">
-                        <span class="timeline-date">En cours</span>
+                        <span class="timeline-date">2024 — en cours</span>
                         <h3 class="timeline-title-text">Développement front-end</h3>
-                        <p class="timeline-desc">Formation HTML, CSS, JavaScript, Bootstrap, React — conception de sites
-                            de A à Z, architecture modulaire et bonnes pratiques.</p>
+                        <p class="timeline-desc">Formation HTML, CSS, JavaScript et Bootstrap 5 — conception de sites
+                            de A à Z, architecture modulaire, accessibilité WCAG et bonnes pratiques performance.</p>
                     </div>
                 </div>
                 <div class="timeline-item reveal reveal-delay-2" role="listitem">
@@ -494,26 +434,31 @@
                 <div class="col">
                     <article class="service-card glass-base">
                         <img src="https://placehold.co/600x360/120924/ff007f?text=Service+Premium" class="card-img-top"
-                            alt="Illustration du Service Premium" width="600" height="360" loading="lazy" decoding="async">
+                            alt="Illustration du Service Premium" width="600" height="360" loading="eager"
+                            decoding="async">
                         <div class="card-body">
                             <h3 class="card-title h5">Service Premium</h3>
                             <p class="card-text mb-0">Un service complet et personnalisé pour répondre à vos besoins
                                 spécifiques.</p>
-                            <button class="btn btn-glass-sm mt-4" aria-label="En savoir plus sur le Service Premium">En
-                                savoir plus</button>
+                            <a href="contact.html" class="btn btn-glass-sm mt-4"
+                                aria-label="En savoir plus sur le Service Premium">En
+                                savoir plus</a>
                         </div>
                     </article>
                 </div>
                 <div class="col">
                     <article class="service-card glass-base">
                         <img src="https://placehold.co/600x360/080511/00f5d4?text=Consultation" class="card-img-top"
-                            alt="Illustration de la Consultation" width="600" height="360" loading="lazy" decoding="async">
+                            alt="Illustration de la Consultation" width="600" height="360" loading="lazy"
+                            decoding="async">
                         <div class="card-body">
                             <h3 class="card-title h5">Consultation</h3>
                             <p class="card-text mb-0">Des conseils experts pour optimiser vos processus et améliorer vos
                                 résultats.</p>
-                            <button class="btn btn-glass-sm mt-4" aria-label="En savoir plus sur la Consultation">En
-                                savoir plus</button>
+                            <button class="btn btn-glass-sm mt-4" data-bs-toggle="modal"
+                                data-bs-target="#modalConsultation" aria-label="En savoir plus sur la Consultation">
+                                En savoir plus
+                            </button>
                         </div>
                     </article>
                 </div>
@@ -525,8 +470,9 @@
                             <h3 class="card-title h5">Formation</h3>
                             <p class="card-text mb-0">Des formations adaptées à vos compétences pour développer votre
                                 expertise.</p>
-                            <button class="btn btn-glass-sm mt-4" aria-label="En savoir plus sur la Formation">En savoir
-                                plus</button>
+                            <a href="contact.html" class="btn btn-glass-sm mt-4"
+                                aria-label="En savoir plus sur la Formation">En savoir
+                                plus</a>
                         </div>
                     </article>
                 </div>
@@ -587,20 +533,20 @@
             <h2 id="stats-title" class="visually-hidden">Statistiques clés</h2>
             <div class="row g-4 text-center">
                 <div class="col-6 col-md-3">
-                    <div class="stat-number">150+</div>
-                    <div class="stat-label">Clients satisfaits</div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Taux de satisfaction</div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-number">50+</div>
+                    <div class="stat-number">3+</div>
                     <div class="stat-label">Projets réalisés</div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support disponible</div>
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Formations complétées</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Technologies maîtrisées</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Disponible pour un stage</div>
                 </div>
             </div>
         </section>
@@ -617,18 +563,18 @@
                 <div class="col-lg-4 d-flex">
                     <figure class="testimonial-card glass-base w-100 d-flex flex-column">
                         <blockquote class="blockquote flex-grow-1">
-                            <p class="card-text mb-4">"Un service exceptionnel et des résultats concrets. Je recommande
-                                vivement !"</p>
+                            <p class="card-text">Un service exceptionnel et des résultats concrets. Je recommande
+                                vivement&nbsp;!</p>
                         </blockquote>
-                        <div class="stars mb-3" aria-label="Évaluation : 5 étoiles sur 5">
-                            <span aria-hidden="true">★★★★★</span>
+                        <div class="stars mb-3">
+                            <span aria-label="Évaluation : 5 étoiles sur 5">★★★★★</span>
                         </div>
                         <figcaption class="d-flex align-items-center gap-3">
-                            <img src="https://placehold.co/44x44/120924/ff007f?text=MD" alt="Portrait de Marie Dupont"
-                                class="avatar flex-shrink-0" width="44" height="44">
+                            <img src="https://placehold.co/44x44/120924/ff007f?text=MD" alt=""
+                                class="avatar flex-shrink-0" width="44" height="44" aria-hidden="true">
                             <div class="client-info">
-                                <div class="client-name">Marie Dupont</div>
-                                <div class="client-role">Directrice Marketing</div>
+                                <p class="client-name mb-0">Marie Dupont</p>
+                                <p class="client-role mb-0">Directrice Marketing</p>
                             </div>
                         </figcaption>
                     </figure>
@@ -638,18 +584,18 @@
                 <div class="col-lg-4 d-flex">
                     <figure class="testimonial-card glass-base w-100 d-flex flex-column">
                         <blockquote class="blockquote flex-grow-1">
-                            <p class="card-text mb-4">"L'équipe est professionnelle et réactive. Nous avons vu une
-                                amélioration significative."</p>
+                            <p class="card-text">L'équipe est professionnelle et réactive. Nous avons vu une
+                                amélioration significative.</p>
                         </blockquote>
-                        <div class="stars mb-3" aria-label="Évaluation : 5 étoiles sur 5">
-                            <span aria-hidden="true">★★★★★</span>
+                        <div class="stars mb-3">
+                            <span aria-label="Évaluation : 5 étoiles sur 5">★★★★★</span>
                         </div>
                         <figcaption class="d-flex align-items-center gap-3">
-                            <img src="https://placehold.co/44x44/080511/00f5d4?text=JM" alt="Portrait de Jean Martin"
-                                class="avatar flex-shrink-0" width="44" height="44">
+                            <img src="https://placehold.co/44x44/080511/00f5d4?text=JM" alt=""
+                                class="avatar flex-shrink-0" width="44" height="44" aria-hidden="true">
                             <div class="client-info">
-                                <div class="client-name">Jean Martin</div>
-                                <div class="client-role">CEO Startup</div>
+                                <p class="client-name mb-0">Jean Martin</p>
+                                <p class="client-role mb-0">CEO, Startup</p>
                             </div>
                         </figcaption>
                     </figure>
@@ -659,18 +605,18 @@
                 <div class="col-lg-4 d-flex">
                     <figure class="testimonial-card glass-base w-100 d-flex flex-column">
                         <blockquote class="blockquote flex-grow-1">
-                            <p class="card-text mb-4">"Un accompagnement personnalisé et des solutions adaptées à nos
-                                besoins spécifiques."</p>
+                            <p class="card-text">Un accompagnement personnalisé et des solutions adaptées à nos
+                                besoins spécifiques.</p>
                         </blockquote>
-                        <div class="stars mb-3" aria-label="Évaluation : 5 étoiles sur 5">
-                            <span aria-hidden="true">★★★★★</span>
+                        <div class="stars mb-3">
+                            <span aria-label="Évaluation : 5 étoiles sur 5">★★★★★</span>
                         </div>
                         <figcaption class="d-flex align-items-center gap-3">
-                            <img src="https://placehold.co/44x44/7000ff/ffffff?text=SL" alt="Portrait de Sophie Lambert"
-                                class="avatar flex-shrink-0" width="44" height="44">
+                            <img src="https://placehold.co/44x44/7000ff/ffffff?text=SL" alt=""
+                                class="avatar flex-shrink-0" width="44" height="44" aria-hidden="true">
                             <div class="client-info">
-                                <div class="client-name">Sophie Lambert</div>
-                                <div class="client-role">Responsable RH</div>
+                                <p class="client-name mb-0">Sophie Lambert</p>
+                                <p class="client-role mb-0">Responsable RH</p>
                             </div>
                         </figcaption>
                     </figure>
@@ -688,7 +634,7 @@
             <div class="row g-4">
                 <div class="col-12 col-md-6">
                     <div class="glass-base p-3 h-100 text-center">
-                        <h2 class="h5">À propos</h2>
+                        <h2 class="h5">Studio</h2>
                         <p class="footer-about-text mt-3 mb-4">Studio est une agence digitale spécialisée dans le
                             développement web et la stratégie en ligne.</p>
                         <nav class="social-nav" aria-label="Liens vers les réseaux sociaux">
@@ -736,7 +682,7 @@
                                         viewBox="0 0 24 24">
                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                                         <circle cx="12" cy="10" r="3" />
-                                    </svg></span>123 Rue de la Régence, Liège</p>
+                                    </svg></span>Liège, Belgique</p>
                             <p class="mb-2"><span class="icon icon-sm me-2 text-muted" aria-hidden="true"><svg
                                         viewBox="0 0 24 24">
                                         <path
@@ -804,6 +750,36 @@
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!-- ── Modal Consultation ── -->
+    <div class="modal fade" id="modalConsultation" tabindex="-1" aria-labelledby="modalConsultationLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-base border-0">
+
+                <div class="modal-header border-0">
+                    <h2 class="modal-title h5" id="modalConsultationLabel">Consultation</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fermer"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>Une session de consultation d'une heure pour analyser vos besoins, définir vos objectifs et
+                        établir une feuille de route claire pour votre projet web ou marketing.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2">✦ Audit de votre présence en ligne</li>
+                        <li class="mb-2">✦ Recommandations personnalisées</li>
+                        <li class="mb-2">✦ Plan d'action concret</li>
+                    </ul>
+                </div>
+
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-glass-sm" data-bs-dismiss="modal">Fermer</button>
+                    <a href="contact.html" class="btn btn-glass-sm">Prendre rendez-vous</a>
+                </div>
+
             </div>
         </div>
     </div>

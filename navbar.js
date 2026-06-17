@@ -2,6 +2,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbarContainer = document.getElementById("navbar");
 
   if (navbarContainer) {
+    // Déterminé en premier pour être disponible dans le template
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const currentHash = window.location.hash;
+    const isHome = currentPage === "index.html" || currentPage === "";
+
+    // Bouton CTA : modal sur l'accueil, lien vers contact.html ailleurs
+    const ctaButton = isHome
+      ? `<button class="btn btn-glass-sm" data-bs-toggle="modal" data-bs-target="#modalContact" aria-haspopup="dialog">
+           <i class="fa-regular fa-paper-plane me-2" aria-hidden="true"></i>Contactez-nous
+         </button>`
+      : `<a href="contact.html" class="btn btn-glass-sm">
+           <i class="fa-regular fa-paper-plane me-2" aria-hidden="true"></i>Contactez-nous
+         </a>`;
+
     navbarContainer.innerHTML = `
       <nav class="navbar navbar-expand-md navbar-dark fixed-top custom-apple-navbar" aria-label="Navigation principale">
         <div class="container">
@@ -49,9 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <button type="submit" class="visually-hidden">Rechercher</button>
               </form>
 
-              <button class="btn btn-glass-sm" data-bs-toggle="modal" data-bs-target="#modalContact" aria-haspopup="dialog">
-                <i class="fa-regular fa-paper-plane me-2" aria-hidden="true"></i>Contactez-nous
-              </button>
+              ${ctaButton}
             </div>
           </div>
 
@@ -60,17 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     // Active link highlight
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    const currentHash = window.location.hash;
-    document.querySelectorAll(".navbar .nav-link.active").forEach((lien) => {
-      lien.classList.remove("active");
-      lien.removeAttribute("aria-current");
-    });
     document.querySelectorAll(".navbar .nav-link").forEach((lien) => {
       const href = lien.getAttribute("href");
-      if (!href) {
-        return;
-      }
+      if (!href) return;
       const [hrefPage, hrefHash] = href.split("#");
       const effectiveHrefPage = hrefPage || "index.html";
       if (effectiveHrefPage === currentPage && (!hrefHash || `#${hrefHash}` === currentHash)) {
@@ -78,13 +82,14 @@ document.addEventListener("DOMContentLoaded", function () {
         lien.setAttribute("aria-current", "page");
       }
     });
-if (currentPage === "index.html" && !currentHash) {
-  const brandLink = document.querySelector(".navbar-brand");
-  if (brandLink) {
-    brandLink.classList.add("active");  // ← ici
-    brandLink.setAttribute("aria-current", "page");
-  }
-}
+
+    if (isHome && !currentHash) {
+      const brandLink = document.querySelector(".navbar-brand");
+      if (brandLink) {
+        brandLink.classList.add("active");
+        brandLink.setAttribute("aria-current", "page");
+      }
+    }
 
     // Notifie search.js que la navbar est prête
     window.dispatchEvent(new Event("navbarLoaded"));

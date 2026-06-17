@@ -8,22 +8,25 @@
         <meta name="description" content="Contactez Studio — Email, téléphone, adresse.">
         <meta name="keywords" content="contact, email, téléphone, adresse, studio">
         <meta name="author" content="Quentin Hawotte">
+        <meta name="robots" content="index, follow">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@300;400;500&display=swap" as="style">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-        <link
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+        <!-- Google Fonts : chargement asynchrone pour éviter le render-blocking -->
+        <link rel="preload"
             href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@300;400;500&display=swap"
-            rel="stylesheet">
+            as="style" onload="this.rel='stylesheet'">
+        <noscript>
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@300;400;500&display=swap">
+        </noscript>
+
         <link rel="stylesheet" href="main.css">
-        <style>
-            .text-muted {
-                color: var(--text-muted, #9ca3af) !important;
-            }
-        </style>
 
     </head>
 
@@ -79,7 +82,7 @@
                                 <small class="text-muted d-block text-uppercase fw-bold"
                                     style="font-size:.75rem;letter-spacing:.05em;">Courriel</small>
                                 <a href="mailto:bonjour@exemple.com"
-                                    class="fs-5 text-decoration-none text-white hover-link">
+                                    class="fs-5 text-decoration-none text-white footer-link">
                                     bonjour@exemple.com
                                 </a>
                             </div>
@@ -92,7 +95,7 @@
                             <div>
                                 <small class="text-muted d-block text-uppercase fw-bold"
                                     style="font-size:.75rem;letter-spacing:.05em;">Téléphone</small>
-                                <a href="tel:+32412345678" class="fs-5 text-decoration-none text-white hover-link">
+                                <a href="tel:+32412345678" class="fs-5 text-decoration-none text-white footer-link">
                                     +32 4 12 34 56 78
                                 </a>
                             </div>
@@ -233,8 +236,8 @@
                 <div class="row g-4">
                     <div class="col-12 col-md-6">
                         <div class="glass-base p-3 h-100 text-center">
-                            <!-- FIX #11 : h3 dans le footer car h1/h2 déjà utilisés dans la page principale -->
-                            <h3 class="h5">À propos</h3>
+                            <!-- FIX #11 : h2 en footer, sectioning element indépendant -->
+                            <h2 class="h5">Studio</h2>
                             <p class="footer-about-text mt-3 mb-4">Studio est une agence digitale spécialisée dans le
                                 développement web et la stratégie en ligne.</p>
                             <nav class="social-nav" aria-label="Liens vers les réseaux sociaux">
@@ -261,10 +264,10 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="glass-base p-3 h-100 text-center">
-                            <h3 class="h5">Contact</h3>
+                            <h2 class="h5">Contact</h2>
                             <address class="mt-3 mb-0 text-start">
-                                <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-muted" aria-hidden="true"></i>123
-                                    Rue de la Régence, Liège</p>
+                                <p class="mb-2"><i class="fas fa-map-marker-alt me-2 text-muted" aria-hidden="true"></i>
+                                    Liège, Belgique</p>
                                 <p class="mb-2"><i class="fas fa-phone me-2 text-muted" aria-hidden="true"></i><a
                                         href="tel:+32412345678" class="footer-link">+32 4 12 34 56 78</a></p>
                                 <p class="mb-0"><i class="fas fa-envelope me-2 text-muted" aria-hidden="true"></i><a
