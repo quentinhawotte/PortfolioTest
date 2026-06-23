@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos — Studio</title>
+    <meta name="description"
+        content="Quentin Hawotte — développeur front-end et designer UX/UI basé à Liège. Découvrez mon parcours, mes compétences et ma philosophie de travail.">
+    <meta name="keywords" content="développeur front-end, UX design, Liège, Bootstrap, accessibilité, portfolio">
+    <meta name="author" content="Quentin Hawotte">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Bootstrap : chargement non-bloquant pour améliorer le LCP -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style"
+        onload="this.rel='stylesheet'" fetchpriority="high">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts : chargement asynchrone pour éviter le render-blocking -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Inter:wght@300;400;500&display=swap"
+        as="style" onload="this.rel='stylesheet'">
+
+
+    <link rel="preload" href="main.css" as="style" onload="this.rel='stylesheet'">
+</head>
+
+<body>
+
+    <a class="skip-link visually-hidden-focusable" href="#main-content">Aller au contenu</a>
+
+    <header>
+        <nav class="navbar navbar-expand-lg custom-apple-navbar fixed-top" role="navigation"
+            aria-label="Navigation principale">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <svg fill="#ffffff" width="32px" height="32px" viewBox="0 0 24 24" role="img"
+                        xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" aria-hidden="false" focusable="false">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#030303"
+                            stroke-width="1.296">
+                            <title>Graphcool icon</title>
+                            <path
+                                d="M21.138 7.929c-1.167-.657-2.633.2-2.868.348l-5.037 2.857c-.744-.591-1.804-.566-2.519.06-.715.625-.881 1.671-.395 2.488s1.486 1.168 2.376.836 1.416-1.252 1.25-2.187l5.023-2.851.032-.019c.33-.209 1.096-.521 1.454-.319.258.146.405.633.417 1.35h-.006v6.301c-.001.588-.314 1.131-.823 1.426l-7.222 4.172c-.51.293-1.137.293-1.646 0l-7.222-4.172c-.509-.295-.822-.838-.823-1.426v-8.34c.001-.588.314-1.131.823-1.425l6.536-3.772c.621.713 1.664.882 2.479.4.815-.48 1.172-1.475.848-2.363-.324-.89-1.236-1.421-2.169-1.266-.934.156-1.623.955-1.641 1.901L3.262 5.823c-.942.542-1.522 1.544-1.524 2.63v8.338c.001 1.086.579 2.088 1.519 2.631l7.221 4.172c.94.541 2.097.541 3.037 0l7.222-4.172c.938-.543 1.517-1.545 1.519-2.629v-6.062h.005c.034-1.422-.347-2.363-1.123-2.802z">
+                            </path>
+                        </g>
+                        <g id="SVGRepo_iconCarrier">
+                            <title>Graphcool icon</title>
+                            <path
+                                d="M21.138 7.929c-1.167-.657-2.633.2-2.868.348l-5.037 2.857c-.744-.591-1.804-.566-2.519.06-.715.625-.881 1.671-.395 2.488s1.486 1.168 2.376.836 1.416-1.252 1.25-2.187l5.023-2.851.032-.019c.33-.209 1.096-.521 1.454-.319.258.146.405.633.417 1.35h-.006v6.301c-.001.588-.314 1.131-.823 1.426l-7.222 4.172c-.51.293-1.137.293-1.646 0l-7.222-4.172c-.509-.295-.822-.838-.823-1.426v-8.34c.001-.588.314-1.131.823-1.425l6.536-3.772c.621.713 1.664.882 2.479.4.815-.48 1.172-1.475.848-2.363-.324-.89-1.236-1.421-2.169-1.266-.934.156-1.623.955-1.641 1.901L3.262 5.823c-.942.542-1.522 1.544-1.524 2.63v8.338c.001 1.086.579 2.088 1.519 2.631l7.221 4.172c.94.541 2.097.541 3.037 0l7.222-4.172c.938-.543 1.517-1.545 1.519-2.629v-6.062h.005c.034-1.422-.347-2.363-1.123-2.802z">
+                            </path>
+                        </g>
+                    </svg>
+                    <span>Studio</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Basculer la navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-3 mb-md-0 gap-md-4">
+                        <li class="nav-item">
+                            <a class="nav-link text-decoration-underline" href="index.html#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-decoration-underline active" href="a-propos.html">À propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-decoration-underline" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-3" role="search" aria-label="Formulaire de recherche">
+                        <input class="form-control form-input-search" id="search-input" type="search"
+                            placeholder="Rechercher..." autocomplete="off">
+                        <button type="submit" class="visually-hidden">Rechercher</button>
+                    </form>
+                    <button class="btn btn-glass-sm" data-bs-toggle="modal" data-bs-target="#modalContact"
+                        aria-haspopup="dialog">
+                        <i class="fa-regular fa-paper-plane me-2" aria-hidden="true"></i>Contactez-nous
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section text-center mb-5" role="region" aria-labelledby="about-hero-heading">
+        <div class="container" style="max-width: 600px;">
+            <p class="section-label">Qui suis-je</p>
+            <h1 id="about-hero-heading">À propos</h1>
+            <p class="lead text-white-50 text-center">Découvrez mon parcours, mes compétences et ma passion pour le
+                développement web et le design.</p>
+        </div>
+    </section>
+
+    <main id="main-content" class="container my-5" role="main">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <!-- ── Présentation ── -->
+                <section class="feature-card glass-base p-5 mb-4" aria-labelledby="about-intro" role="region">
+                    <h2 id="about-intro">Présentation</h2>
+
+                    <div class="d-flex align-items-start gap-4 mb-4 flex-column flex-md-row">
+
+                        <figure class="m-4" style="width:150px; height:150px; flex-shrink:0">
+                            <a href="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                target="_blank" rel="noopener noreferrer" class="portrait-link d-block"
+                                aria-label="Voir le portrait en taille réelle (ouvre un nouvel onglet)">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Portrait de Quentin Hawotte, développeur front-end et designer UX/UI"
+                                    class="portrait-img shadow-sm" />
+                            </a>
+                            <figcaption class="visually-hidden">Photo de profil — Quentin Hawotte</figcaption>
+                        </figure>
+
+                        <div>
+                            <p class="lead mb-2 mt-3 mt-md-0">
+                                Bonjour, je suis Quentin — développeur front-end et designer UX/UI basé à Liège.
+                            </p>
+                            <p class="text-muted mb-0">
+                                Formé à l'IFAPME en développement web et design UX/UI, j'ai une approche double :
+                                concevoir des interfaces qui font sens <em>avant</em> de les coder proprement.
+                                Accessibilité, performance et cohérence visuelle sont au cœur de chaque projet.
+                            </p>
+                            <p class="text-muted mb-0 mt-3">
+                                Avant de me spécialiser dans le web, j'ai travaillé en marketing stratégique — une
+                                expérience qui me permet d'aborder chaque projet avec une vision à la fois
+                                fonctionnelle et orientée utilisateur.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Cards parcours + compétences -->
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <article class="glass-base p-4 h-100" aria-labelledby="parcours-heading">
+                                <h3 id="parcours-heading" class="h5 text-white">Mon parcours</h3>
+                                <p class="m-2" style="color:var(--text-secondary)">
+                                    Après une formation en marketing (IFAPME Liège), je me suis réorienté vers le
+                                    développement web et le design UX/UI. J'ai conçu des wireframes pour des agences
+                                    belges comme GREAT et TBWA Belgium, et développé des projets complets en Bootstrap
+                                    5,
+                                    HTML/CSS et JavaScript vanilla.
+                                </p>
+                                <p class="mb-0" style="color:var(--text-secondary)">
+                                    J'apprécie autant la phase de conception — personas, wireframes, prototypes Figma —
+                                    que l'intégration et l'optimisation technique qui en découle.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="col-md-6">
+                            <article class="glass-base p-4 h-100" aria-labelledby="competences-heading">
+                                <h3 id="competences-heading" class="h5 text-white">Compétences clés</h3>
+                                <ul class="m-2 ps-3" style="color:var(--text-secondary)">
+                                    <li>HTML5 / CSS3 / JavaScript (vanilla)</li>
+                                    <li>Bootstrap 5 systèmes de design</li>
+                                    <li>UX/UI : personas, wireframes, Figma</li>
+                                    <li>Accessibilité WCAG A/AA</li>
+                                    <li>Performance web (LCP, CLS, WebP)</li>
+                                    <li>Git workflow front-end moderne</li>
+                                    <li>Marketing stratégique</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- ── Chiffres clés & Preuves d'impact (Best Practice : Evidence) ── -->
+                    <div class="row g-3 mt-3">
+                        <div class="col-6 col-md-3">
+                            <div class="glass-base p-3 text-center h-100">
+                                <span class="d-block h3 fw-bold mb-1" style="color:var(--accent)">100%</span>
+                                <small style="color:var(--text-muted)">Conformité WCAG</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="glass-base p-3 text-center h-100">
+                                <span class="d-block h3 fw-bold mb-1" style="color:var(--accent)">95</span>
+                                <small style="color:var(--text-muted)">Score Lighthouse</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="glass-base p-3 text-center h-100">
+                                <span class="d-block h3 fw-bold mb-1" style="color:var(--accent)">2+ ans</span>
+                                <small style="color:var(--text-muted)">Expérience Agence</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="glass-base p-3 text-center h-100">
+                                <span class="d-block h3 fw-bold mb-1" style="color:var(--accent)">10+</span>
+                                <small style="color:var(--text-muted)">Projets Livrés</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Valeurs / philosophie + Vision -->
+                    <div class="my-4 p-4 glass-base">
+                        <h3 class="h5 text-white" id="philosophie-heading">Ma philosophie & Vision</h3>
+                        <p class="mb-3" style="color:var(--text-secondary)">
+                            Un bon site, c'est d'abord un site que tout le monde peut utiliser. Je conçois en pensant
+                            aux lecteurs d'écran autant qu'aux dernières tendances visuelles. La glassmorphism et les
+                            bento grids sont des outils esthétiques, pas des fins en soi — ils servent l'expérience,
+                            pas l'inverse.
+                        </p>
+
+                        <!-- Citation directe (Best Practice : Dialog) -->
+                        <blockquote class="blockquote border-start border-4 border-primary ps-3 my-3">
+                            <p class="mb-0 fst-italic h6" style="color:var(--text-primary)">« Le design n'est pas
+                                seulement ce à quoi ça
+                                ressemble, c'est comment ça fonctionne. Mon but est d'allier esthétique moderne et
+                                accessibilité totale. »</p>
+                        </blockquote>
+
+                        <!-- Vision future (Best Practice : Sequel Preview) -->
+                        <p class="mb-0 small mt-3" style="color:var(--text-muted)">
+                            <strong>Ma vision d'avenir :</strong> Face à un web saturé, je m'oriente activement vers
+                            l'éco-conception numérique pour garantir des solutions légères, durables et universellement
+                            accessibles.
+                        </p>
+                    </div>
+                    <div class="my-4 p-4 glass-base">
+                        <h3 class="h5 text-white" id="passions-heading">Passions & Inspirations</h3>
+                        <p class="mb-3" style="color:var(--text-secondary)">
+                            En dehors du code et des wireframes, je suis passionné par la musique rock et le
+                            design sonore. J'aime explorer comment le son peut enrichir l'expérience utilisateur et
+                            créer des ambiances immersives.
+                        </p>
+                        <iframe data-testid="embed-iframe" style="border-radius:12px"
+                            src="https://open.spotify.com/embed/playlist/37i9dQZF1EQn2GRFTFMl2A?utm_source=generator&si=211f082aff984e02"
+                            width="100%" height="400" frameborder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy" title="Playlist Spotify rock et design sonore"></iframe>
+
+                        <figure class="ratio ratio-16x9 mt-4" style="border-radius: 12px; overflow: hidden;">
+                            <iframe src="https://player.vimeo.com/video/385433252"
+                                title="Présentation vidéo Brasserie projet Gsara 2019"
+                                allow="autoplay; fullscreen; picture-in-picture" loading="lazy"
+                                allowfullscreen></iframe>
+                        </figure>
+                        <figure class="ratio ratio-16x9 mt-4" style="border-radius: 12px; overflow: hidden;">
+                            <iframe src="https://www.youtube-nocookie.com/embed/cuPqspxRxQ8?rel=0"
+                                title="Présentation vidéo de Quentin Hawotte Ingé son Technifuture 2020"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                loading="lazy" allowfullscreen></iframe>
+                        </figure>
+
+
+
+
+                        <!-- CTA optimisé (Best Practice : Call To Action pour la Lead-Gen) -->
+                        <div class="mt-4 d-flex flex-column flex-sm-row gap-3 align-items-center border-top pt-4"
+                            style="border-color:var(--glass-border) !important">
+                            <a class="btn btn-primary px-4 py-2 rounded-3 shadow-sm fw-bold" href="contact.html">
+                                <i class="fas fa-paper-plane me-2" aria-hidden="true"></i>Discutons de votre projet
+                            </a>
+                            <a class="btn btn-outline-secondary px-4 py-2 rounded-3" href="CV_HAWOTTE_Quentin v1.5.pdf"
+                                target="_blank" rel="noopener"
+                                aria-label="Télécharger mon CV (ouvre un nouvel onglet, format PDF)">
+                                Télécharger CV
+                            </a>
+                            <div class="ms-sm-auto d-flex gap-3 mt-2 mt-sm-0">
+                                <a href="https://github.com/" target="_blank" rel="noopener"
+                                    aria-label="Mon profil GitHub (ouvre un nouvel onglet)"
+                                    class="text-decoration-none text-secondary">
+                                    <i class="fab fa-github fa-lg" aria-hidden="true"></i>
+                                </a>
+                                <a href="https://linkedin.com/" target="_blank" rel="noopener"
+                                    aria-label="Mon profil LinkedIn (ouvre un nouvel onglet)"
+                                    class="text-decoration-none text-secondary">
+                                    <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="py-4 mt-1" role="contentinfo">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-6">
+                    <div class="glass-base p-3 h-100 text-center">
+                        <h2 class="h5">Studio</h2>
+                        <p class="footer-about-text mt-3 mb-4">Studio est une agence digitale spécialisée dans le
+                            développement web et la stratégie en ligne.</p>
+                        <nav class="social-nav" aria-label="Liens vers les réseaux sociaux">
+                            <ul class="d-flex justify-content-center align-items-center gap-3 list-unstyled mb-0">
+                                <li>
+                                    <a href="#" class="social-icon" aria-label="Suivez-nous sur Facebook">
+                                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="social-icon" aria-label="Suivez-nous sur Twitter">
+                                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="social-icon" aria-label="Suivez-nous sur LinkedIn">
+                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="social-icon" aria-label="Suivez-nous sur Instagram">
+                                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="glass-base p-3 h-100 text-center">
+                        <h2 class="h5">Contact</h2>
+                        <address class="mt-3 mb-0 text-start">
+                            <p class="mb-2">
+                                <i class="fas fa-map-marker-alt me-2 text-muted" aria-hidden="true"></i>
+                                Liège, Belgique
+                            </p>
+                            <p class="mb-2">
+                                <i class="fas fa-phone me-2 text-muted" aria-hidden="true"></i>
+                                <a href="tel:+32412345678" class="footer-link">+32 4 12 34 56 78</a>
+                            </p>
+                            <p class="mb-0">
+                                <i class="fas fa-envelope me-2 text-muted" aria-hidden="true"></i>
+                                <a href="mailto:bonjour@exemple.com" class="footer-link">bonjour@exemple.com</a>
+                            </p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3" style="border-color:var(--glass-border);">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <small class="text-muted">© 2026 Studio. Tous droits réservés.</small>
+                </div>
+                <div class="col-md-6 text-md-end mt-2 mt-md-0">
+                    <a href="#" class="footer-link d-inline me-3">Mentions légales</a>
+                    <a href="#" class="footer-link d-inline">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="navbar.js" defer></script>
+    <script src="search.js" defer></script>
+</body>
+
+</html>
